@@ -15,3 +15,9 @@
 - ios/Runner/AppDelegate.swift
 
   ![alt text](image.png)
+
+# modules
+
+- flutter_local_notifications - ref: https://pub.dev/packages/flutter_local_notifications
+- flutter timezone - ref: https://pub.dev/packages/timezone
+- rxdart - ref: https://pub.dev/packages/rxdart

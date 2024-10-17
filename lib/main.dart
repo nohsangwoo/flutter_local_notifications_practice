@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_noti/another_page.dart';
 import 'package:test_noti/home.dart';
 import 'package:test_noti/local_notifications.dart';
 
@@ -35,7 +36,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Homepage(),
+      // home: const Homepage(),
+      routes: {
+        '/': (context) => const Homepage(),
+        '/another': (context) => const AnotherPage(),
+      },
     );
   }
 }

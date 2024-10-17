@@ -10,6 +10,23 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   @override
+  void initState() {
+    listenToNotifications();
+    super.initState();
+  }
+
+  // to listen to any notification clicked or not
+  listenToNotifications() {
+    print("Listening to notification");
+    LocalNotifications.onClickNotification.stream.listen((event) {
+      print("inside listen in home.dart");
+      print(event);
+
+      Navigator.pushNamed(context, '/another', arguments: event);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -39,6 +56,16 @@ class _HomepageState extends State<Homepage> {
               );
             },
             label: const Text("Periodic Notification"),
+          ),
+          ElevatedButton.icon(
+            icon: const Icon(Icons.timer_outlined),
+            onPressed: () {
+              LocalNotifications.showScheduleNotification(
+                  title: "Schedule Notification",
+                  body: "This is a Schedule Notification",
+                  payload: "This is schedule data");
+            },
+            label: const Text("Schedule Notifications"),
           ),
           ElevatedButton.icon(
             icon: const Icon(Icons.stop_circle_outlined),

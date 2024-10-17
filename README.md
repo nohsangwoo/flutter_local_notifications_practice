@@ -10,4 +10,8 @@
 
 # ios setting reference
 
-![alt text](image.png)
+- ref: https://github.com/MaikuB/flutter_local_notifications/blob/master/flutter_local_notifications/example/ios/Runner/AppDelegate.swift
+
+- ios/Runner/AppDelegate.swift
+
+  ![alt text](image.png)

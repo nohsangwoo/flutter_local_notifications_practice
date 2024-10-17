@@ -63,4 +63,23 @@ class LocalNotifications {
     await _flutterLocalNotificationsPlugin
         .show(0, title, body, notificationDetails, payload: payload);
   }
+  // to show periodic notification at regular interval
+
+  static Future<void> showPeriodicNotification({
+    required String title,
+    required String body,
+    required String payload,
+    // required int interval,
+  }) async {
+    const AndroidNotificationDetails androidNotificationDetails =
+        AndroidNotificationDetails('channel 2', 'your channel name',
+            channelDescription: 'your channel description',
+            importance: Importance.max,
+            priority: Priority.high,
+            ticker: 'ticker');
+    const NotificationDetails notificationDetails =
+        NotificationDetails(android: androidNotificationDetails);
+    await _flutterLocalNotificationsPlugin.periodicallyShow(
+        1, title, body, RepeatInterval.everyMinute, notificationDetails);
+  }
 }

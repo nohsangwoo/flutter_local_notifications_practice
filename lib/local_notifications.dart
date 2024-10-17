@@ -82,4 +82,9 @@ class LocalNotifications {
     await _flutterLocalNotificationsPlugin.periodicallyShow(
         1, title, body, RepeatInterval.everyMinute, notificationDetails);
   }
+
+  // close a specific channel notification
+  static Future cancel(int id) async {
+    await _flutterLocalNotificationsPlugin.cancel(id);
+  }
 }

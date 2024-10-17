@@ -87,4 +87,9 @@ class LocalNotifications {
   static Future cancel(int id) async {
     await _flutterLocalNotificationsPlugin.cancel(id);
   }
+
+  // close all notification
+  static Future cancelAll() async {
+    await _flutterLocalNotificationsPlugin.cancelAll();
+  }
 }

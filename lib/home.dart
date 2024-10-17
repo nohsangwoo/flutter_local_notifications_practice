@@ -47,11 +47,13 @@ class _HomepageState extends State<Homepage> {
             },
             label: const Text("Close Periodic Notifications"),
           ),
-          TextButton(
-              onPressed: () {
-                LocalNotifications.cancel(1);
-              },
-              child: const Text("Close Periodic Notifications"))
+          ElevatedButton.icon(
+            icon: const Icon(Icons.stop_circle_outlined),
+            onPressed: () {
+              LocalNotifications.cancelAll();
+            },
+            label: const Text("Close All Notifications"),
+          ),
         ],
       ),
     );
